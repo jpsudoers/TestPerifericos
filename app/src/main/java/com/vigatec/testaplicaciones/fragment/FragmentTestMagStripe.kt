@@ -56,18 +56,9 @@ class FragmentTestMagStripe : Fragment() {
            Log.d(TAG,"Llamado a bip")
 
             //GetMagStripe
-          //  UsdkManager.getMagReader()
+            getMagReader()
 
-               private var UMagReader: 
-
-
-
-
-
-
-
-
-            }
+              }
 
 
 
