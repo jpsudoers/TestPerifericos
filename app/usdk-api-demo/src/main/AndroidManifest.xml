@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.eas.usdk.demo">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="titan.extperm.SETTING_GET"/>
+    <uses-permission android:name="titan.extperm.SETTING_SET"/>
+    <uses-permission android:name="titan.extperm.CERTIFICATE_SET"/>
+    <uses-permission android:name="titan.extperm.STORAGE_GET"/>
+    <uses-permission android:name="titan.extperm.USB_SET"/>
+    <uses-permission android:name="titan.extperm.USB_GET"/>
+    <uses-permission android:name="titan.extperm.PROCESS_SET"/>
+    <uses-permission android:name="titan.extperm.TELEPHONY_GET"/>
+    <uses-permission android:name="titan.extperm.TELEPHONY_SET"/>
+    <uses-permission android:name="titan.extperm.APPLICATION_GET"/>
+    <uses-permission android:name="titan.extperm.APPLICATION_SET"/>
+    <uses-permission android:name="titan.extperm.SENSITIVEUX_GET"/>
+    <uses-permission android:name="titan.extperm.UX_GET"/>
+    <uses-permission android:name="titan.extperm.UX_SET"/>
+    <uses-permission android:name="titan.extperm.LOCATION_GET"/>
+    <uses-permission android:name="titan.extperm.LOCATION_SET"/>
+    <uses-permission android:name="titan.extperm.PROPERTY_GET"/>
+    <uses-permission android:name="titan.extperm.RESTORE"/>
+    <uses-permission android:name="titan.extperm.EMVL1_LOCK_SET"/>
+    <uses-permission android:name="titan.extperm.EMVL2_LOCK_SET"/>
+    <uses-permission android:name="titan.extperm.NET_SET"/>
+    <uses-permission android:name="titan.extperm.UPDATE_GET"/>
+    <uses-permission android:name="titan.extperm.UPDATE_SET"/>
+    <uses-permission android:name="titan.extperm.PERSIST_SET"/>
+    <uses-permission android:name="titan.extperm.PERSIST_GET"/>
+    <uses-permission android:name="titan.extperm.DEVICE_ADMIN"/>
+    <application
+        android:name="cn.eas.usdk.demo.DemoApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="cn.eas.usdk.demo.view.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="cn.eas.usdk.demo.view.AlgorithmActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.BeeperActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.CashBoxActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.DeviceManagerActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.DigledActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.ethernet.EthernetActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.icreader.MenuActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.ScannerActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light"/>
+        <activity android:name="cn.eas.usdk.demo.view.emv.MenuActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.InnerScannerActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.ExScannerActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.LedActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.LKIToolActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.MagReaderActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.IndustryMagReaderActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.ParamFileActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.MenuActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.PrinterActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.VectorPrinterActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.RFReaderActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.SerialPortActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.UsbDeiceActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.SystemStatisticsActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.TMSActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.SettingActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.SignPanelActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.FelicaReaderActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.FiscalActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.ResetFactoryActivity"></activity>
+
+        <activity android:name="cn.eas.usdk.demo.view.emv.EMVSettingActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.emv.SearchCardFirstActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.emv.StartEMVFirstActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.emv.StartProcessActivity"></activity>
+
+        <activity android:name="cn.eas.usdk.demo.view.ethernet.EthernetSettingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.MKSKActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.DUKPTActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.FixedKeyActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.ExternalActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.PineLabsActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name=".view.pinpad.RkisActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name=".view.pinpad.RkisSettingActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.ControlledApiActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.icreader.ICCpuActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.icreader.PSamActivity"></activity>
+
+        <activity android:name="cn.eas.usdk.demo.view.system.MenuActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.UsbActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.SettingActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.ProcessActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.StorageActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.KeyChainActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.TelephonyActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.ApplicationActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.system.InputActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.KeyboardActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.LocationActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.NfcActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.StatusBarActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.system.SystemPropertyActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+
+        <activity android:name="cn.eas.usdk.demo.view.dock.MenuActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.WifDockActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.WifiDockCustomPairActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.BTDockActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.DockEthernetActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.DockPortActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.dock.DockPortSettingActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.update.UpdateActivity"></activity>
+        <activity android:name="cn.eas.usdk.demo.view.mifare.MenuActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.mifare.DesFireActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.mifare.DesFireApplicationActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.mifare.DesFireFileActivity"
+            android:windowSoftInputMode = "stateAlwaysHidden|adjustPan"/>
+        <activity android:name="cn.eas.usdk.demo.view.pinpad.DeriveKeyActivity"/>
+        <activity android:name=".view.DecodeEngineActivity"/>
+        <activity android:name="cn.eas.usdk.demo.view.onguard.OnGuardActivity"/>
+        <activity android:name=".view.onguard.OnGuardSettinigActivity" />
+        <activity android:name=".view.networkmanager.MenuActivity" />
+        <activity android:name=".view.networkmanager.ppp.PPPMenuActivity" />
+        <activity android:name=".view.networkmanager.ppp.PPPServerActivity" />
+        <activity android:name=".view.networkmanager.ppp.PPPClientActivity" />
+        <activity android:name=".view.DeviceAdminActivity" />
+        <receiver android:name="cn.eas.usdk.demo.receiver.UpdateResultReceiver">
+            <intent-filter>
+                <action android:name="com.usdk.apiservice.action.update.UPDATE_RESULT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="cn.eas.usdk.demo.receiver.ScanResultReceiver">
+            <intent-filter>
+                <action android:name="com.usdk.apiservice.action.scan.scanResult"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

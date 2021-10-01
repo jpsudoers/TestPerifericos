@@ -75,14 +75,15 @@ dependencies {
 
 
 
-    implementation fileTree(dir: 'libs', include: ["*.jar", "*.aar"])
-    implementation project(":acc-lib:acc")
-    implementation project(path: ':acc-lib:bc-lib:dm-apos')
-    implementation project(path: ':acc-lib:ingp-payment-core')
-    implementation project(path: ':acc-lib:ingp-secure-api')
-    implementation project(path: ':acc-lib:ingp-secure-client-lib')
-    implementation project(path: ':acc-lib:ingp-types')
-   //implementation project(path: ':acc-lib:persistence')
-    implementation project(path: ':acc-lib:utils')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+   // implementation 'com.github.arcadefire:nice-spinner:1.3.1'
+    //implementation 'com.github.angads25:filepicker:1.0.2'
+    //implementation 'com.github.mabbas007:TagsEditText:1.0.5'
+    implementation 'com.jrummyapps:colorpicker:2.1.6'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
 }

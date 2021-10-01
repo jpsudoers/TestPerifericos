@@ -31,3 +31,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    KEY_ALIAS = "landi"
+    KEY_PASSWORD = "landi123456"
+    STORE_FILE_PATH = rootProject.rootDir.toString() + "/keystore/LandiApp.keystore"
+    STORE_PASSWORD = "landi123456"
+}

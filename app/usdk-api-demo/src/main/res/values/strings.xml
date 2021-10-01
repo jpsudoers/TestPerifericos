@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">USDKDemo</string>
+
+    <string name="main_title"> USDK 接口模块列表 </string>
+    <string name="emv_title"> EMV 模块 </string>
+    <string name="ic_title"> 接触式读卡器列表 </string>
+    <string name="pinpad_title"> PINPAD 模块 </string>
+    <string name="system_title"> System 模块 </string>
+    <string name="dock_title"> 底座模块 </string>
+    <string name="mifare_title"> Mifare管理模块列表 </string>
+    <string name="message">Message</string>
+    <string name="clear"> 清屏 </string>
+
+    <string name="not_support_module"> 该机型不支持该模块 </string>
+    <string name="not_open_module"> 不支持该模块,请在[设置]中打开 </string>
+    <string name="coming_soon"> 暂未开发，敬请期待 </string>
+    <string name="exception_prompt"> 异常提示 </string>
+    <string name="error_prompt"> 错误提示 </string>
+    <string name="pinpad_epp_config"> 请在[设置]中设置Pinpad类型为外置 </string>
+
+    <string name="register"> 点击注册 </string>
+    <string name="unregister"> 点击注销 </string>
+    <string name="register_success"> 注册成功 </string>
+    <string name="unregister_success"> 注销成功 </string>
+    <string name="register_fail"> 注册失败 </string>
+    <string name="unregister_fail"> 注销失败 </string>
+
+    <string name="setting"> 设置 </string>
+    <string name="save"> 保存 </string>
+    <string name="cancel"> 取 消 </string>
+    <string name="ok"> 确 定 </string>
+
+    <string name="current_model"> 当前机型 : </string>
+    <string name="led_type"> LED 灯 : </string>
+    <string name="pinpad_type"> 密码键盘 : </string>
+    <string name="rfreader_type"> 非接读卡器 : </string>
+    <string name="external"> 外置 </string>
+    <string name="inner"> 内置 </string>
+    <string name="yes"> 是 </string>
+    <string name="no"> 否 </string>
+    <string name="common_log_switch"> USDK日志开关： </string>
+
+    <string name="whole_track_data"> 完整磁道数据:  </string>
+    <string name="track_enabled"> 磁道开启 :  </string>
+    <string name="track1"> 磁道1 </string>
+    <string name="track2"> 磁道2 </string>
+    <string name="track3"> 磁道3 </string>
+    <string name="retain_ctrl_char"> 是否保留控制字符： </string>
+    <string name="check_track_state"> 是否检查磁道状态： </string>
+
+    <string name="card_type_support"> 支持的卡类型 :  </string>
+    <string name="card_ic"> 接触 </string>
+    <string name="card_rf"> 非接 </string>
+    <string name="card_mag"> 磁条 </string>
+
+    <string name="rf_card_all_types"> 非接寻卡支持全部卡类型 </string>
+
+    <string name="loop_search_rf_card"> 循环寻找非接卡 </string>
+
+    <string name="shield_confirm_key_with_empty_sign"> 空签名屏蔽[确认]键 : </string>
+
+    <string name="display_line"> 行数/蜂鸣时间 : </string>
+    <string name="display_message"> 请输入显示信息 </string>
+    <string name="display_line_note"> 显示行数仅支持1及2行，其他参数用于测试。\n蜂鸣时间仅支持大于0的时间，其他参数用于测试。 </string>
+
+    <string name="request_keyid_prompt"> 请输入密钥索引 </string>
+
+    <!-- LED-->
+    <string name="setPhyicalLedEnabled"> 启用物理LED灯 : </string>
+    <string name="setSimulateLedEnabled"> 启用模拟LED灯 : </string>
+    <string name="setSimulateLedColor"> 模拟LED灯是否为彩色 : </string>
+
+   <!-- RKIS-->
+    <string name="kapId"> KAP区 : </string>
+    <string name="kms_id"> 后台编号 : </string>
+    <string name="terminal_no"> 终端号 : </string>
+    <string name="merchant_no"> 商户号 : </string>
+    <string name="is_keyid_from_user"> 是否手动设置密钥索引 : </string>
+    <string name="key_id"> 密钥索引 : </string>
+    <string name="start_RKIS"> 开始远程密钥下载 </string>
+    <string name="request_ip"> 请输入IP </string>
+    <string name="request_port"> 请输入PORT </string>
+    <string name="request_cid"> 请输入客户编号 </string>
+    <string name="request_tpdu"> 请输入TPDU </string>
+    <string name="request_terminalno"> 请输入终端号 </string>
+    <string name="request_merchantno"> 请输入商户号 </string>
+
+    <!-- ETHERNET -->
+    <string name="local_ip"> 本地IP地址: </string>
+    <string name="gateway"> 网关 : </string>
+    <string name="mask"> 网络掩码 : </string>
+    <string name="dns1"> 域名服务器1 : </string>
+    <string name="dns2"> 域名服务器2 : </string>
+    <string name="mac"> mac地址 : </string>
+    <string name="connection_type"> 连接类型 : </string>
+    <string name="dhcp"> DHCP </string>
+    <string name="static_ip"> Static IP </string>
+    <string name="ip_format"> 格式：xx.xx.xx.xx </string>
+    <string name="request_localip"> 请输入本地IP </string>
+    <string name="request_gateway"> 请输入网关 </string>
+    <string name="request_mask"> 请输入网络掩码 </string>
+    <string name="request_dns1"> 请输入域名服务器1 </string>
+    <string name="request_dns2"> 请输入域名服务器2 </string>
+
+    <string name="ethernet_exist"> 以太网模块是否存在： </string>
+    <string name="ethernet_switch"> 以太网开关： </string>
+    <string name="ethernet_connect_state"> 以太网连接状态： </string>
+
+    <string name="camera_type"> 摄像头类型:  </string>
+    <string name="front"> 前置 </string>
+    <string name="back"> 后置 </string>
+
+    <string name="scanner_type"> 扫码枪类型:  </string>
+    <string name="device_name"> 设备名称:  </string>
+
+    <string name="sheet_num"> 打印联数： </string>
+    <string name="track_type"> 磁道类型： </string>
+
+    <string name="timeout"> 超时时间(ms)： </string>
+    <string name="sendData"> 发送数据： </string>
+
+    <string name="is_singleton"> 设备实例为单例 : </string>
+
+    <!-- 主菜单-->
+    <string name="description_algorithm"> 安全算法模块</string>
+    <string name="description_beeper"> 鸣蜂器模块。实现 POS 设备持续蜂鸣的功能</string>
+    <string name="description_cashbox"> 钱箱操作模块</string>
+    <string name="description_devicemanger"> 设备管理模块。提供获取设备信息（包括终端序列号、设备型号、系统版本等相关设备信息）、重启终端、更新终端时间等设备管理接口。</string>
+    <string name="description_digled"> 数码管模块。作为一个附属的显示设备，在部分机型上采用，主要想用于显示简单的数字和一些特殊标识指示灯，用于和主液晶屏显示不同的信息。</string>
+    <string name="description_dock"> 底座设备，包括蓝牙和WIFI底座 </string>
+    <string name="description_emv"> EMV 金融交易模块。用来处理金融卡的交易流程。</string>
+    <string name="description_ethernet"> 以太网模块。提供以太网开启、关闭、及其他相关设置等接口。</string>
+    <string name="description_exscanner"> 外接扫码枪模块。</string>
+    <string name="description_icreader"> IC 接触式读卡器模块。</string>
+    <string name="description_innerscanner"> 内置扫描头模块。采用专业的扫描头实现扫码功能。用于带内置扫码硬件的终端，如 P990/P950 等设备。</string>
+    <string name="description_led"> 设备 LED 灯模块。提供各个 LED 灯的开关功能。</string>
+    <string name="description_lki"> 本地注入密钥模块。提供本地密钥注入/取消功能，用于母 POS 下装主密钥。</string>
+    <string name="description_magreader"> 磁条卡刷卡器模块。提供采集磁条卡数据信息功能。</string>
+    <string name="description_industry_magreader"> 行业磁条卡刷卡器模块。提供采集行业磁条卡数据信息功能。</string>
+    <string name="description_paramfile"> 参数文件管理模块。参数文件是用来存放应用程序需要的参数数据，下电后不会丢失。\n 使用前请先下装参数文件，详情参见《USDK应用开发指南》 参数文件管理模块。</string>
+    <string name="description_pinpad"> 密码键盘模块。用于处理交易中敏感数据的加密，像磁道、PIN 数据和报文 MAC 计算；提供客户密码 (PIN) 安全输入的功能。</string>
+    <string name="description_printer"> 打印机模块。热敏打印机提供交易凭条打印功能，支持文本、条码、二维码和图片打印功能。</string>
+    <string name="description_vector_printer"> 矢量打印机模块。热敏打印机提供交易凭条打印功能，支持文本、条码、二维码和图片打印功能。</string>
+    <string name="description_rfreader"> 非接读卡器模块。提供一些非接卡业务的卡片数据交互功能。</string>
+    <string name="description_serialport"> 串口模块。提供串口数据收发功能。</string>
+    <string name="description_usbdevice"> 虚拟usb设备模块。提供虚拟usbHid、usbCdc功能。</string>
+    <string name="description_systemstatictis"> 系统统计模块。提供获取各系统模块使用量及状态量的功能。</string>
+    <string name="description_tms"> 终端应用管理模块。提供静默安装/卸载功能。</string>
+    <string name="description_signpanel"> 电子签名板模块。S160电子签名功能。</string>
+    <string name="description_system"> 系统功能服务 </string>
+    <string name="description_felicareader"> Felica非接读卡器模块。实现Felica卡数据交互功能</string>
+    <string name="description_fiscal"> Fiscal税控模块。实现Fiscal税控设备通讯</string>
+    <string name="description_mifare"> Mifare管理模块。实现Mifare相关卡片操作</string>
+    <string name="description_decodeengine">解码库模块。实现解码相关操作</string>
+	<string name="description_onGuard"> OnGuard模块。提供P2PE安全方案。</string>
+
+    <!-- EMV 模块-->
+    <string name="emv_setting"> EMV设置 </string>
+    <string name="emvlog_level"> EMV日志等级： </string>
+    <string name="description_searchcard_first"> 使用 searchCard -> startEMV -> respondEvent &amp; stopSearch &amp; stopEMV &amp; halt 系列接口实现EMV流程。</string>
+    <string name="description_startemv_first"> 使用 startEMV -> searchCard -> respondCard &amp; respondEvent &amp; stopSearch &amp; stopEMV &amp; halt 系列接口实现EMV流程。</string>
+    <string name="description_setcardhandle"> 使用 startEMV -> searchCard -> setCardHandle &amp; respondEvent &amp; stopSearch &amp; stopEMV &amp; halt 系列接口实现EMV流程。</string>
+    <string name="description_setcardhandle2"> 使用 startEMV -> setCardHandle &amp; respondEvent &amp; stopSearch &amp; stopEMV &amp; halt 系列接口实现EMV流程。</string>
+    <string name="description_startprocess"> 使用startProcess &amp; stopProcess 系列旧接口实现EMV流程。\n注：\n(1)该系列接口已废弃，请使用startEMV系列接口代替。\n(2)该接口不支持磁条卡。</string>
+
+    <string name="insert_pass_swipe_card"> 请插卡或挥卡或刷卡</string>
+    <string name="insert_pass_card"> 请插卡或挥卡</string>
+    <string name="pass_card_again"> 请重新挥卡</string>
+    <string name="pass_card_for_script_update"> 请求更新发卡行脚本,请挥卡</string>
+    <string name="pass_card_again_accord_prompt"> 请根据手机提示操作，并重新挥卡</string>
+    <string name="unknown_type"> 未知类型</string>
+
+    <string name="insert_succ"> 插卡成功 </string>
+    <string name="tap_succ"> 挥卡成功 </string>
+    <string name="unknown_card_type"> 未知卡类型</string>
+
+    <!-- 接触式读卡器模块-->
+    <string name="description_at1604"> AT1604 卡读卡器模块</string>
+    <string name="description_at1608"> AT1608 卡读卡器模块</string>
+    <string name="description_at24cxx"> AT24CXX 卡读卡器模块</string>
+    <string name="description_iccpu"> ICCPU 卡读卡器模块</string>
+    <string name="description_psam"> PSam 卡读卡器模块</string>
+    <string name="description_sim4428"> SIM4428 卡读卡器模块</string>
+    <string name="description_sim4442"> SIM4442 卡读卡器模块</string>
+
+    <!-- PINPAD 模块-->
+    <string name="description_mksk">采用 MK/SK 密钥管理体系</string>
+    <string name="description_dukpt">采用 DUKPT （Derived Unique Key per Transaction）密钥管理体系</string>
+    <string name="description_fixed">采用 FIXED_KEY 密钥管理体系</string>
+    <string name="description_external">外置密钥键盘特有接口</string>
+    <string name="description_rkis">远程密钥注入系统（Remote Key Injection System） 的简称，包括密钥管理系统（KMS）及其 WEB 页面管理系统。\n该模块使用非对称密钥方案版本。</string>
+    <string name="description_pinelabs">PINELABS定制的远程密钥下载方案</string>
+    <string name="description_cogeban">意大利Cogeban项目Pinpad相关接口</string>
+    <string name="description_derive_key">西班牙密钥注入</string>
+    <string name="admin_ctrled_api">Admin Controlled权限相关Api</string>
+    <!-- RKIS 服务器返回错误码含义-->
+    <string name="rkis_retinfo_00">成功</string>
+    <string name="rkis_retinfo_01">无此交易类型</string>
+    <string name="rkis_retinfo_02">无此厂商标识</string>
+    <string name="rkis_retinfo_03">无此终端型号标识</string>
+    <string name="rkis_retinfo_04">无此硬件序列号</string>
+    <string name="rkis_retinfo_05">商户号、终端号无登记</string>
+    <string name="rkis_retinfo_06">认证阶段标识错误</string>
+    <string name="rkis_retinfo_07">双向认证失败</string>
+    <string name="rkis_retinfo_10">无密钥下载</string>
+    <string name="rkis_retinfo_70">会话特征码错误</string>
+    <string name="rkis_retinfo_71">证书非法</string>
+    <string name="rkis_retinfo_72">数字签名错误</string>
+    <string name="rkis_retinfo_73">私钥签名失败</string>
+    <string name="rkis_retinfo_74">公钥加密失败</string>
+    <string name="rkis_retinfo_89">传输密钥数据 MAC 校验失败</string>
+    <string name="rkis_retinfo_96">系统故障</string>
+    <string name="rkis_retinfo_98">密钥错误</string>
+    <string name="rkis_retinfo_99">加密机响应错误</string>
+    <string name="rkis_retinfo_unknow">未知错误</string>
+
+    <!-- Dock 模块-->
+    <string name="description_wifi"> WIFI底座</string>
+    <string name="description_bt"> 蓝牙底座</string>
+
+    <string name="dock_eth_info">底座以太网通讯参数</string>
+    <string name="networkType">POS网络通讯类型</string>
+
+    <string name="pos_net_channel"> 0 - POS自身网络 </string>
+    <string name="dock_net_channel"> 1 - 底座以太网 </string>
+
+    <string name="unfold">展开</string>
+    <string name="fold">收起</string>
+
+    <string name="request_timeout"> 请输入超时时间 </string>
+    <string name="request_read_exp_length"> 请输入读取的期望长度 </string>
+    <string name="request_write_length"> 请输入写数据的长度 </string>
+    <string name="request_data_written"> 请输入待发送数据 </string>
+
+    <!-- System 模块-->
+    <string name="description_usb">USB管理模块</string>
+    <string name="description_setting">设置管理模块</string>
+    <string name="description_process">进程管理模块</string>
+    <string name="description_storage">外置存储器挂载管理模块</string>
+    <string name="description_telephony">Telephony管理模块</string>
+    <string name="description_keychain">密钥证书链管理模块</string>
+    <string name="description_application">应用管理模块</string>
+    <string name="description_input">设备输入输出管理模块</string>
+    <string name="description_keyboard">按键管理模块</string>
+    <string name="description_location">位置管理模块</string>
+    <string name="description_nfc">NFC管理模块</string>
+    <string name="description_status_bar">状态栏管理模块</string>
+    <string name="description_system_property">系统属性管理模块</string>
+
+    <string name="excludePackageNames"> 应用白名单 : </string>
+    <string name="timezone_list"> 系统支持的时区列表 : </string>
+    <string name="screen_timeout_list"> 休眠 : </string>
+    <string name="auto_timezone_enabled"> 是否自动确定时区 : </string>
+    <string name="cellular_data_enabled"> 是否启用移动网络 : </string>
+    <string name="alias"> 证书别名 : </string>
+    <string name="is_grant"> 是否授权 : </string>
+    <string name="minute"> 分钟 </string>
+    <string name="second"> 秒 </string>
+    <string name="minutes"> 分钟 </string>
+    <string name="seconds"> 秒 </string>
+    <string name="milliseconds"> 毫秒 </string>
+
+    <string name="language_list"> 系统语言 : </string>
+    <string name="ime_list"> 输入法列表 : </string>
+
+    <string name="homekey_enabled"> 是否启用Home键 : </string>
+    <string name="navigation_bar_enabled"> 是否启用虚拟导航条 : </string>
+    <string name="status_bar_enabled"> 是否启用状态栏下拉 : </string>
+
+    <string name="ethernet_set_config_prompt">请勾选需要设置的参数项</string>
+    <string name="dmz_enable">开启</string>
+    <string name="dmz_disable">关闭</string>
+
+    <string name="emvlock_enable">开启</string>
+    <string name="emvlock_disable">关闭</string>
+
+    <!-- MifareManager模块-->
+    <string name="description_desfire"> DesFire模块</string>
+    <string name="description_desfire_application"> DesFire模块，Application相关接口</string>
+    <string name="description_desfire_file"> DesFire模块，File相关接口</string>
+    <string name="desfire_apdu_style_mode"> ApduStyleMode </string>
+    <string name="desfire_chaining_mode"> ChainingMode </string>
+
+    <!-- Scanner模块-->
+    <string name="description_scanner"> 前/后置扫码器模块。</string>
+    <string name="enable_fix_focus"> 是否固定对焦</string>
+    <string name="front_show_default_preview_ui"> 前置扫码是否显示预览界面 </string>
+    <string name="guide_light"> 指引灯 </string>
+    <string name="fill_light"> 补光灯 </string>
+    <string name="no_show_ui"> 无扫码界面 </string>
+    <string name="hid_scan"> HID扫码 </string>
+    <string name="enableOutputBroadcast"> 广播扫码结果 </string>
+    <string name="autoAddTABChar"> 补充TAG字符 </string>
+    <string name="autoAddCarriageReturnChar"> 补充回车按键字符 </string>
+    <string name="charConvertToKey"> 字符转按键 </string>
+    <!-- ResetFactory模块-->
+    <string name="description_resetfactory"> 恢复出厂设置管理模块。</string>
+    <string name="clean_system_data"> 清除系统数据 </string>
+    <string name="not_clean_system_data"> 不清除系统数据 </string>
+
+    <string name="description_update"> Update模块，更新服务相关接口</string>
+
+    <string name="color_picker"> Color Picker </string>
+    <!-- NetWorkManager模块-->
+    <string name="net_work_manager_title"> 网络管理模块</string>
+    <string name="description_net_work_manager"> 网络管理模块</string>
+    <string name="description_ppp_client"> ppp通讯，作为客户端</string>
+    <string name="description_ppp_service"> ppp通讯，作为服务端</string>
+    <string name="description_ppp"> 2台终端使用ppp协议进行通讯</string>
+
+    <!-- 设备管理模块-->
+    <string name="device_admin_title"> 设备管理</string>
+</resources>
