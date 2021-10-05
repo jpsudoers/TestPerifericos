@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.databinding.FragmentTestDisplayMagentaBinding
@@ -32,8 +33,8 @@ class FragmentTestDisplayMagenta : Fragment()
 
                         val action = FragmentTestDisplayMagentaDirections.actionFragmentTestDisplayMagentaToFragmentTestDisplayYellow()
                     findNavController().navigate(action)
-
-                        }
+                    Toast.makeText(requireContext(), "Prueba MAGENTA OK", Toast.LENGTH_SHORT).show()
+                                                                 }
 
             }
 

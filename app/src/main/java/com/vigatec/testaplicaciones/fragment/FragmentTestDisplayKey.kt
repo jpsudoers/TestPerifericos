@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.databinding.FragmentTestDisplayKeyBinding
@@ -34,7 +35,8 @@ class FragmentTestDisplayKey : Fragment()
 
                         val action = FragmentTestDisplayKeyDirections.actionFragmentTestDisplayKeyToFragmentTestMagStripe()
                     findNavController().navigate(action)
+                    Toast.makeText(requireContext(), "Prueba KEY OK", Toast.LENGTH_SHORT).show()
 
-                        }
+                                                              }
             }
 }

@@ -79,14 +79,14 @@ class FragmentTestMagStripe : Fragment() {
     {
         super.onViewCreated(view, savedInstanceState)
 
-         register()
+        register()
         initDeviceInstanceBeeper()
         initDeviceInstance()
         searchCard(view)
 
         //Sound
         //getBeeper()?.startBeep(300)
-        Log.d(TAG,"Sonido Beep")
+        Log.d(TAG,"Sonido Beep MagStripe")
                 beepWhenNormal(view)
 
     }
@@ -119,12 +119,13 @@ class FragmentTestMagStripe : Fragment() {
 
 
 
-    fun searchCard(v: View?) {
+    fun searchCard(v: View?)
+    {
 
         Log.d(TAG,"Buscando Tarjeta")
         val timeout = 30
-        //outputBlueText(">>> searchCard | timeout: $timeout")
-        try {
+        try
+        {
             if (!setTRKDataType()) {
                 // return;
             }
@@ -137,22 +138,19 @@ class FragmentTestMagStripe : Fragment() {
             magReader!!.searchCard(timeout, object : OnSwipeListener.Stub() {
                 //@Throws(RemoteException::class)
                 override fun onSuccess(track: Bundle) {
-                    //  outputText("=> onSuccess")
-                    //  outputText("SERVICE_CODE = " + track.getString(MagData.SERVICE_CODE))
-                    //  outputText("CardNo = " + track.getString(MagData.PAN))
-                    val track1 = track.getString(MagData.PAN)
-                    Log.d(TAG,"nrotarjeta: $track1")
-                    //  outputText("TRACK1 = " + track.getString(MagData.TRACK1))
-                    //  outputText("TRACK2 = " + track.getString(MagData.TRACK2))
-                    //  outputText("TRACK3 = " + track.getString(MagData.TRACK3))
-                    val trackStates = track.getIntArray(MagData.TRACK_STATES)
-                    // for (i in trackStates!!.indices) {
-                    //    outputText(String.format("Track%s states = %d", i + 1, trackStates[i]))
-                    //    }
 
-                  if (track1 == null)
+                    val Pan     = track.getString(MagData.PAN)
+                    Log.d(TAG,"PAN: $Pan")
+                    val Track1  = track.getString(MagData.TRACK1)
+                    Log.d(TAG,"Track1: $Track1")
+                    val Track2  = track.getString(MagData.TRACK2)
+                    Log.d(TAG,"Track2: $Track2")
+                    val Track3  = track.getString(MagData.TRACK3)
+                    Log.d(TAG,"Track3: $Track3")
+
+                  if (Track1 == null)
                   {
-                      Toast.makeText(requireContext(), "hahaha no funcionó", Toast.LENGTH_SHORT).show()
+                      Toast.makeText(requireContext(), "Imposible leer tarjeta", Toast.LENGTH_SHORT).show()
                   }
                   else
                   {
@@ -161,58 +159,65 @@ class FragmentTestMagStripe : Fragment() {
 
                 }
 
-                override fun onError(p0: Int) {
-                    TODO("Not yet implemented")
+                override fun onError(p0: Int)
+                {
+                    Log.d(TAG,"OnError")
+
                 }
 
                 @Throws(RemoteException::class)
-                override fun onTimeout() {
+                override fun onTimeout()
+                {
                     //outputRedText("=> onTimeout")
                 }
             })
-        } catch (e: Exception) {
+        }
+        catch (e: Exception)
+        {
             // handleException(e)
         }
     }
 
      @Throws(RemoteException::class)
-      private fun enableTrack(trkId: Int, enabled: Boolean) {
-          if (enabled) {
+      private fun enableTrack(trkId: Int, enabled: Boolean)
+      {
+          if (enabled)
+          {
               magReader!!.enableTrack(trkId)
-          } else {
+          }
+          else
+          {
               magReader!!.disableTrack(trkId)
           }
-                                                              }
+      }
 
       @Throws(RemoteException::class)
-      private fun setTRKDataType(): Boolean {
+      private fun setTRKDataType(): Boolean
+      {
           val result = BytesValue()
           val ret = magReader!!.magIOControl(
               IoCtrlCmd.SET_TRKDATA_TYPE, byteArrayOf(
                   wholeTrkId.toByte()
               ), result
           )
-          if (ret != MagError.SUCCESS) {
+          if (ret != MagError
+                  .SUCCESS)
+          {
             //  outputText("=> magIOControl[SET_TRKDATA_TYPE] fail: " + getErrorDetail(ret))
 
               return false
-          } else {
-                  Log.d(TAG, "Datatype del track" )
-          //outputText("result = " + BytesUtil.bytes2HexString(result.data))
           }
+          else
+          {
+                  Log.d(TAG, "Función setRTRKDataType OK" )
+          }
+          return true
+       }
 
-//        result = new BytesValue();
-//        ret = magReader.magIOControl(IoCtrlCmd.GET_TRKDATA_TYPE, new byte[] {(byte)wholeTrkId}, result);
-//        if (ret != MagError.SUCCESS) {
-//            outputRedText("=> magIOControl[GET_TRKDATA_TYPE] fail: " + getErrorDetail(ret));
-//            return false;
-//        } else {
-//            outputText("result = " + BytesUtil.bytes2HexString(result.getData()));
-//        }
-    return true
-}
 //End Class */
 }
+
+
 
 
 
