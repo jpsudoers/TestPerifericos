@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:orientation="horizontal">
+
+    <com.vigatec.testaplicaciones.util.FontAwesome
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="&#xf1eb;"
+        android:textSize="40sp"
+        android:gravity="center"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_ssid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ssid"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_connected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/connected"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_not_supported"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/not_supported"
+            android:textColor="@color/white"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

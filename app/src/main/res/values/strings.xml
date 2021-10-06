@@ -9,4 +9,8 @@
     <string name="swipe_magnetic">Deslice Tarjeta</string>
     <string name="read_chip">Inserte Tarjeta</string>
     <string name="read_contactless">Acerque Tarjeta</string>
+    <string name="scanning_networks">Escaneando Redes...</string>
+    <string name="connected">Conectado</string>
+    <string name="not_supported">No Soportado</string>
+    <string name="ssid">SSID</string>
 </resources>
