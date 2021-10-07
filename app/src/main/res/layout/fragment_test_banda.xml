@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.FragmentTestMagStripe">
+    tools:context=".fragment.FragmentTestBanda">
 
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/read_chip"
+            android:text="@string/swipe_magnetic"
             android:textAlignment="center"
             android:textSize="70sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_gravity="center"
-        android:src="@drawable/insert_card"/>
+        android:src="@drawable/swipe_card"/>
 
 
     <LinearLayout

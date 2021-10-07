@@ -33,7 +33,7 @@ class FragmentTestDisplayKey : Fragment()
                 super.onViewCreated(view, savedInstanceState)
                 binding.btmTestDisplay4Key.setOnClickListener{
 
-                        val action = FragmentTestDisplayKeyDirections.actionFragmentTestDisplayKeyToFragmentTestMagStripe()
+                        val action = FragmentTestDisplayKeyDirections.actionFragmentTestDisplayKeyToFragmentTestBanda()
                     findNavController().navigate(action)
                     Toast.makeText(requireContext(), "Prueba KEY OK", Toast.LENGTH_SHORT).show()
 

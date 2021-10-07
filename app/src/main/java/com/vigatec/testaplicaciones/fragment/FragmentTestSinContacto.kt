@@ -9,37 +9,33 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.navigation.fragment.findNavController
+
 import com.usdk.apiservice.aidl.beeper.UBeeper
 import com.usdk.apiservice.aidl.data.StringValue
 import com.usdk.apiservice.aidl.emv.*
-import com.usdk.apiservice.aidl.emv.KernelID
 import com.usdk.apiservice.aidl.pinpad.*
 import com.vigatec.testaplicaciones.DeviceHelper
 import com.vigatec.testaplicaciones.constant.DemoConfig
-import com.vigatec.testaplicaciones.databinding.FragmentTestChipBinding
+import com.vigatec.testaplicaciones.databinding.FragmentTestSinContactoBinding
 import com.vigatec.testaplicaciones.emv.SearchListenerAdapter
 import com.vigatec.testaplicaciones.entity.CardOption
 import com.vigatec.testaplicaciones.entity.EMVOption
 import com.vigatec.testaplicaciones.util.BytesUtil
+import com.vigatec.testaplicaciones.util.EMVInfoUtil
 import com.vigatec.testaplicaciones.util.TLV
 import java.lang.Exception
 import java.lang.IllegalStateException
-import com.usdk.apiservice.aidl.emv.ActionFlag
-import com.vigatec.testaplicaciones.R
-import com.vigatec.testaplicaciones.util.EMVInfoUtil
 import java.lang.RuntimeException
 import java.lang.StringBuilder
 import java.util.ArrayList
 
 
-open class FragmentTestChip : Fragment()
-{
-    private val TAG = "FragmentTestChip"
-    private var _binding: FragmentTestChipBinding? = null
-    private val binding get() = _binding!!
-    private var screen = 1
+open class FragmentTestSinContacto : Fragment() {
+
+    private val TAG = "FragmentTestSinContacto"
+    private var binding: FragmentTestSinContactoBinding? = null
+    private val biding get() = binding!!
+
 
     //DeviceManager's Variable
     private var beeper: UBeeper? = null
@@ -55,22 +51,18 @@ open class FragmentTestChip : Fragment()
     protected fun initDeviceInstanceBeeper() {beeper = DeviceHelper.me().beeper }
     protected fun initDeviceInstance() { emv = DeviceHelper.me().emv }
 
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         Log.d(TAG,"onCreateView")
-
-        _binding = FragmentTestChipBinding.inflate(inflater,container,false)
-        return binding.root
+        binding = FragmentTestSinContactoBinding.inflate(inflater, container, false)
+        return binding!!.root
     }
-
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
-        Log.d(TAG,"onViewCreated")
+        Log.d(TAG, "onViewCreated")
         super.onViewCreated(view, savedInstanceState)
-        // Call's Funtions
         register()
         initDeviceInstanceBeeper()
         initDeviceInstance()
@@ -80,8 +72,6 @@ open class FragmentTestChip : Fragment()
         beepWhenNormal(view)
         startTrade(view)
         startEMV(emvOption)
-
-
     }
 
     private fun register()
@@ -121,41 +111,36 @@ open class FragmentTestChip : Fragment()
         Log.d(TAG,"******  search card ******")
         try
         {
-                   emv!!.searchCard(cardOption.toBundle(), DemoConfig.TIMEOUT, object :SearchCardListener.Stub()
+            emv!!.searchCard(cardOption.toBundle(), DemoConfig.TIMEOUT, object : SearchCardListener.Stub()
+            {
+                override fun onCardSwiped(p0: Bundle?) {
+                    Log.d(TAG,"=> onCardSwiped")
+
+                    TODO("Not yet implemented")
+                }
+
+                override fun onCardInsert()
                 {
-                    override fun onCardSwiped(p0: Bundle?) {
-                        Log.d(TAG,"=> onCardSwiped")
+                    Log.d(TAG,"=> onCardInsert")
+                    startEMV(emvOption.flagPSE(0x00.toByte()))
+                }
 
-                        TODO("Not yet implemented")
-                    }
+                override fun onCardPass(p0: Int) {
+                    Log.d(TAG,"=> onCardPass")
 
-                    override fun onCardInsert()
-                    {
-                        Log.d(TAG,"=> onCardInsert")
-                        startEMV(emvOption.flagPSE(0x00.toByte()))
-                    }
+                    TODO("Not yet implemented")
+                }
 
-                    override fun onCardPass(p0: Int) {
-                        Log.d(TAG,"=> onCardPass")
+                override fun onTimeout()
+                {
+                    Log.d(TAG,"=> onTimeout")
+                }
 
-                        TODO("Not yet implemented")
-                    }
-
-                    override fun onTimeout()
-                    {
-                        Log.d(TAG,"=> onTimeout")
-                        stopEMV()
-
-                    }
-
-
-
-                    override fun onError(code: Int, message: String)
-                    {
-                        Log.d(TAG,String.format("=> onError | %s[0x%02X]", message, code))
-                        stopEMV()
-                    }
-                })
+                override fun onError(code: Int, message: String)
+                {
+                    Log.d(TAG,String.format("=> onError | %s[0x%02X]", message, code))
+                }
+            })
         }
         catch (e: Exception)
         {
@@ -172,7 +157,7 @@ open class FragmentTestChip : Fragment()
         halt()
     }
 
-     open fun startEMV(option: EMVOption)
+    protected open fun startEMV(option: EMVOption)
     {
         try
         {
@@ -796,5 +781,6 @@ open class FragmentTestChip : Fragment()
 
     }
 //End Class
-}
 
+
+}

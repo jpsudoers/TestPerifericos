@@ -13,4 +13,5 @@
     <string name="connected">Conectado</string>
     <string name="not_supported">No Soportado</string>
     <string name="ssid">SSID</string>
+    <string name="print_step">Prueba de impresión</string>
 </resources>

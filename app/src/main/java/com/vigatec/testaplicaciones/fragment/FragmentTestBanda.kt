@@ -1,6 +1,8 @@
 package com.vigatec.testaplicaciones.fragment
 
 
+
+
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
@@ -31,23 +33,19 @@ import com.usdk.apiservice.aidl.magreader.industry.UIndustryMagReader
 import com.vigatec.testaplicaciones.DeviceHelper
 
 import com.vigatec.testaplicaciones.R
-import com.vigatec.testaplicaciones.databinding.FragmentTestMagStripeBinding
 import java.lang.Exception
 import java.lang.IllegalStateException
-import com.usdk.apiservice.aidl.constants.RFDeviceName
 
-import android.os.Build
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.usdk.apiservice.aidl.beeper.BeeperFrequency
 import com.usdk.apiservice.aidl.beeper.UBeeper
-import com.usdk.apiservice.BuildConfig
+import com.vigatec.testaplicaciones.databinding.FragmentTestBandaBinding
 
 
-class FragmentTestMagStripe : Fragment() {
+class FragmentTestBanda : Fragment() {
 
-    private val TAG = "FragmentTestMagStripe"
-    private var _binding: FragmentTestMagStripeBinding? = null
+    private val TAG = "FragmentTestBanda"
+    private var _binding: FragmentTestBandaBinding? = null
     private val binding get() = _binding!!
 
     //DeviceManager's Variable
@@ -70,7 +68,7 @@ class FragmentTestMagStripe : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View?
     {
 
-        _binding = FragmentTestMagStripeBinding.inflate(inflater, container, false)
+        _binding = FragmentTestBandaBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -87,7 +85,7 @@ class FragmentTestMagStripe : Fragment() {
         //Sound
         //getBeeper()?.startBeep(300)
         Log.d(TAG,"Sonido Beep MagStripe")
-                beepWhenNormal(view)
+        beepWhenNormal(view)
 
     }
 
@@ -148,14 +146,14 @@ class FragmentTestMagStripe : Fragment() {
                     val Track3  = track.getString(MagData.TRACK3)
                     Log.d(TAG,"Track3: $Track3")
 
-                  if (Track1 == null)
-                  {
-                      Toast.makeText(requireContext(), "Imposible leer tarjeta", Toast.LENGTH_SHORT).show()
-                  }
-                  else
-                  {
-                     findNavController().navigate(R.id.action_fragmentTestMagStripe_to_fragmentTestChip)
-                  }
+                    if (Track1 == null)
+                    {
+                        Toast.makeText(requireContext(), "Imposible leer tarjeta", Toast.LENGTH_SHORT).show()
+                    }
+                    else
+                    {
+                        findNavController().navigate(R.id.action_fragmentTestBanda_to_fragmentTestEmv)
+                    }
 
                 }
 
@@ -178,41 +176,41 @@ class FragmentTestMagStripe : Fragment() {
         }
     }
 
-     @Throws(RemoteException::class)
-      private fun enableTrack(trkId: Int, enabled: Boolean)
-      {
-          if (enabled)
-          {
-              magReader!!.enableTrack(trkId)
-          }
-          else
-          {
-              magReader!!.disableTrack(trkId)
-          }
-      }
+    @Throws(RemoteException::class)
+    private fun enableTrack(trkId: Int, enabled: Boolean)
+    {
+        if (enabled)
+        {
+            magReader!!.enableTrack(trkId)
+        }
+        else
+        {
+            magReader!!.disableTrack(trkId)
+        }
+    }
 
-      @Throws(RemoteException::class)
-      private fun setTRKDataType(): Boolean
-      {
-          val result = BytesValue()
-          val ret = magReader!!.magIOControl(
-              IoCtrlCmd.SET_TRKDATA_TYPE, byteArrayOf(
-                  wholeTrkId.toByte()
-              ), result
-          )
-          if (ret != MagError
-                  .SUCCESS)
-          {
+    @Throws(RemoteException::class)
+    private fun setTRKDataType(): Boolean
+    {
+        val result = BytesValue()
+        val ret = magReader!!.magIOControl(
+            IoCtrlCmd.SET_TRKDATA_TYPE, byteArrayOf(
+                wholeTrkId.toByte()
+            ), result
+        )
+        if (ret != MagError
+                .SUCCESS)
+        {
             //  outputText("=> magIOControl[SET_TRKDATA_TYPE] fail: " + getErrorDetail(ret))
 
-              return false
-          }
-          else
-          {
-                  Log.d(TAG, "Función setRTRKDataType OK" )
-          }
-          return true
-       }
+            return false
+        }
+        else
+        {
+            Log.d(TAG, "Función setRTRKDataType OK" )
+        }
+        return true
+    }
 
 //End Class */
 }

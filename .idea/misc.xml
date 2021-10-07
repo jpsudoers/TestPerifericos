@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_banda.xml" value="0.321875" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_chip.xml" value="0.4846014492753623" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_contactless.xml" value="0.4846014492753623" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_display_magenta.xml" value="0.321875" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_emv.xml" value="0.321875" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_emv2.xml" value="0.3255208333333333" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_gprs.xml" value="0.4846014492753623" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_mag_stripe.xml" value="0.3255208333333333" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_print.xml" value="0.4782608695652174" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_result.xml" value="0.321875" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_sin_contacto.xml" value="0.321875" />
+        <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_wifi.xml" value="0.3125" />
         <entry key="..\:/Users/jpsil/StudioProjects/TestPerifericos/app/src/main/res/drawable/dialog_rounded_bg.xml" value="0.15092592592592594" />
         <entry key="..\:/Users/jpsil/StudioProjects/TestPerifericos/app/src/main/res/drawable/ic_back_nav.xml" value="0.15925925925925927" />
         <entry key="..\:/Users/jpsil/StudioProjects/TestPerifericos/app/src/main/res/layout/fragment_inicio.xml" value="0.19947916666666668" />

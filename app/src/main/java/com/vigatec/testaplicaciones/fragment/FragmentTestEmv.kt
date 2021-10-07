@@ -1,41 +1,44 @@
 package com.vigatec.testaplicaciones.fragment
 
-import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.os.RemoteException
+
+import android.os.*
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 import com.usdk.apiservice.aidl.beeper.UBeeper
 import com.usdk.apiservice.aidl.data.StringValue
 import com.usdk.apiservice.aidl.emv.*
+import com.usdk.apiservice.aidl.emv.KernelID
 import com.usdk.apiservice.aidl.pinpad.*
 import com.vigatec.testaplicaciones.DeviceHelper
-import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.constant.DemoConfig
-import com.vigatec.testaplicaciones.databinding.FragmentTestContactlessBinding
 import com.vigatec.testaplicaciones.emv.SearchListenerAdapter
 import com.vigatec.testaplicaciones.entity.CardOption
 import com.vigatec.testaplicaciones.entity.EMVOption
 import com.vigatec.testaplicaciones.util.BytesUtil
-import com.vigatec.testaplicaciones.util.EMVInfoUtil
 import com.vigatec.testaplicaciones.util.TLV
 import java.lang.Exception
 import java.lang.IllegalStateException
+import com.usdk.apiservice.aidl.emv.ActionFlag
+import com.vigatec.testaplicaciones.constant.DemoConfig.TAG
+import com.vigatec.testaplicaciones.databinding.FragmentTestEmvBinding
+import com.vigatec.testaplicaciones.util.EMVInfoUtil
+import kotlinx.android.synthetic.main.fragment_test_emv.*
 import java.lang.RuntimeException
 import java.lang.StringBuilder
 import java.util.ArrayList
 
 
-open class FragmentTestContactless : Fragment() {
-
-    private val TAG = "FragmentTestContactless"
-    private var binding: FragmentTestContactlessBinding? = null
-    private val biding get() = binding!!
+open class FragmentTestEmv : Fragment()
+{
+    private val TAG = "FragmentTestEmv"
+    private var _binding: FragmentTestEmvBinding? = null
+    private val binding get() = _binding!!
 
 
     //DeviceManager's Variable
@@ -52,28 +55,60 @@ open class FragmentTestContactless : Fragment() {
     protected fun initDeviceInstanceBeeper() {beeper = DeviceHelper.me().beeper }
     protected fun initDeviceInstance() { emv = DeviceHelper.me().emv }
 
+    //Excepcion click on nav
+    private val clickTag = "__click__"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
     {
         Log.d(TAG,"onCreateView")
-        binding = FragmentTestContactlessBinding.inflate(inflater, container, false)
-        return binding!!.root
+
+        _binding = FragmentTestEmvBinding.inflate(inflater,container,false)
+        return binding.root
     }
+
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         Log.d(TAG, "onViewCreated")
         super.onViewCreated(view, savedInstanceState)
+        // Call's Funtions
         register()
         initDeviceInstanceBeeper()
         initDeviceInstance()
 
         //Sound
-        Log.d(TAG,"Sonido Beep EMV")
+        Log.d(TAG, "Sonido Beep EMV")
         beepWhenNormal(view)
         startTrade(view)
         startEMV(emvOption)
+
+        btnEmv.setOnClickListener{
+            val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
+            findNavController().navigate(action)
+
+        }
+
+
+        //binding.btnEmv.setOnClickListener
+        //{
+            //val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
+            //    findNavController().navigate(action) //  Toast.makeText(requireContext(), "Prueba OK", Toast.LENGTH_SHORT).show()
+
+            //findNavController().safeNavigate(FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto())
+       // }
     }
+
+
+
+
+
+
+
+
+
+
 
     private fun register()
     {
@@ -112,7 +147,7 @@ open class FragmentTestContactless : Fragment() {
         Log.d(TAG,"******  search card ******")
         try
         {
-            emv!!.searchCard(cardOption.toBundle(), DemoConfig.TIMEOUT, object : SearchCardListener.Stub()
+            emv!!.searchCard(cardOption.toBundle(), DemoConfig.TIMEOUT, object :SearchCardListener.Stub()
             {
                 override fun onCardSwiped(p0: Bundle?) {
                     Log.d(TAG,"=> onCardSwiped")
@@ -135,11 +170,16 @@ open class FragmentTestContactless : Fragment() {
                 override fun onTimeout()
                 {
                     Log.d(TAG,"=> onTimeout")
+                    stopEMV()
+
                 }
+
+
 
                 override fun onError(code: Int, message: String)
                 {
                     Log.d(TAG,String.format("=> onError | %s[0x%02X]", message, code))
+                    stopEMV()
                 }
             })
         }
@@ -158,7 +198,7 @@ open class FragmentTestContactless : Fragment() {
         halt()
     }
 
-    protected open fun startEMV(option: EMVOption)
+    open fun startEMV(option: EMVOption)
     {
         try
         {
@@ -782,6 +822,5 @@ open class FragmentTestContactless : Fragment() {
 
     }
 //End Class
-
-
 }
+
