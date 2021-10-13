@@ -3,24 +3,13 @@ package com.vigatec.testaplicaciones.fragment
 
 
 
-import android.content.Context
-import android.content.Intent
-import android.graphics.Color
+
 import android.os.*
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-//import androidx.navigation.fragment.findNavController
-//import com.ingenico.acc.UsdkManager
-//import com.ingenico.acc.UsdkManager.deviceService
-//import com.ingenico.acc.UsdkManager.getBeeper
-//import com.ingenico.acc.UsdkManager.getDevice
-//import com.ingenico.acc.UsdkManager.getMagReader
-//import com.ingenico.ingp.types.iso7813.Track1
-//import com.ingenico.lar.apos.DeviceHelper
-import com.usdk.apiservice.aidl.UDeviceService
 import com.usdk.apiservice.aidl.data.BytesValue
 import com.usdk.apiservice.aidl.magreader.OnSwipeListener
 import com.usdk.apiservice.aidl.magreader.TrackID
@@ -29,13 +18,10 @@ import com.usdk.apiservice.aidl.magreader.UMagReader
 import com.usdk.apiservice.aidl.magreader.IoCtrlCmd
 import com.usdk.apiservice.aidl.magreader.MagData
 import com.usdk.apiservice.aidl.magreader.MagError
-import com.usdk.apiservice.aidl.magreader.industry.UIndustryMagReader
 import com.vigatec.testaplicaciones.DeviceHelper
-
 import com.vigatec.testaplicaciones.R
 import java.lang.Exception
 import java.lang.IllegalStateException
-
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.usdk.apiservice.aidl.beeper.UBeeper

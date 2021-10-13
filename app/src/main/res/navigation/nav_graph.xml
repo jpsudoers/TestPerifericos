@@ -78,12 +78,24 @@
             android:id="@+id/action_fragmentTestBanda_to_fragmentTestEmv"
             app:destination="@id/fragmentTestEmv"
             />
+        <action
+            android:id="@+id/action_fragmentTestEmv_to_fragmentTestSinContacto"
+            app:destination="@id/fragmentTestSinContacto" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTestSinContacto"
         android:name="com.vigatec.testaplicaciones.fragment.FragmentTestSinContacto"
         android:label="fragment_test_sin_contacto"
-        tools:layout="@layout/fragment_test_sin_contacto" />
+        tools:layout="@layout/fragment_test_sin_contacto" >
+        <action
+            android:id="@+id/action_fragmentTestSinContacto_to_fragmentTestWifi"
+            app:destination="@id/fragmentTestWifi" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTestWifi"
+        android:name="com.vigatec.testaplicaciones.fragment.FragmentTestWifi"
+        android:label="fragment_test_wifi"
+        tools:layout="@layout/fragment_test_wifi" />
 
 
 </navigation>

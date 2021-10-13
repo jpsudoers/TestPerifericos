@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 
 import com.usdk.apiservice.aidl.beeper.UBeeper
 import com.usdk.apiservice.aidl.data.StringValue
@@ -72,6 +74,12 @@ open class FragmentTestSinContacto : Fragment() {
         beepWhenNormal(view)
         startTrade(view)
         startEMV(emvOption)
+        biding.btnCless.setOnClickListener(){
+            val action = FragmentTestSinContactoDirections.actionFragmentTestSinContactoToFragmentTestWifi()
+            findNavController().navigate(action)
+
+        }
+
     }
 
     private fun register()
@@ -122,11 +130,12 @@ open class FragmentTestSinContacto : Fragment() {
                 override fun onCardInsert()
                 {
                     Log.d(TAG,"=> onCardInsert")
-                    startEMV(emvOption.flagPSE(0x00.toByte()))
+
                 }
 
                 override fun onCardPass(p0: Int) {
                     Log.d(TAG,"=> onCardPass")
+                    startEMV(emvOption.flagPSE(0x01.toByte()))
 
                     TODO("Not yet implemented")
                 }

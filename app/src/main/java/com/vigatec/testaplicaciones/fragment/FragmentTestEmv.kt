@@ -1,12 +1,14 @@
 package com.vigatec.testaplicaciones.fragment
 
 
+import android.content.Context
 import android.os.*
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
@@ -34,7 +36,7 @@ import java.lang.StringBuilder
 import java.util.ArrayList
 
 
-open class FragmentTestEmv : Fragment()
+class FragmentTestEmv : Fragment()
 {
     private val TAG = "FragmentTestEmv"
     private var _binding: FragmentTestEmvBinding? = null
@@ -84,28 +86,17 @@ open class FragmentTestEmv : Fragment()
         startTrade(view)
         startEMV(emvOption)
 
-        btnEmv.setOnClickListener{
+
+
+        binding.btnEmv.setOnClickListener{
             val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
             findNavController().navigate(action)
 
         }
 
 
-        //binding.btnEmv.setOnClickListener
-        //{
-            //val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
-            //    findNavController().navigate(action) //  Toast.makeText(requireContext(), "Prueba OK", Toast.LENGTH_SHORT).show()
 
-            //findNavController().safeNavigate(FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto())
-       // }
     }
-
-
-
-
-
-
-
 
 
 
@@ -152,7 +143,7 @@ open class FragmentTestEmv : Fragment()
                 override fun onCardSwiped(p0: Bundle?) {
                     Log.d(TAG,"=> onCardSwiped")
 
-                    TODO("Not yet implemented")
+                    Toast.makeText(requireContext(), "Debe insertar la tarjeta", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onCardInsert()
@@ -162,9 +153,9 @@ open class FragmentTestEmv : Fragment()
                 }
 
                 override fun onCardPass(p0: Int) {
-                    Log.d(TAG,"=> onCardPass")
 
-                    TODO("Not yet implemented")
+
+
                 }
 
                 override fun onTimeout()
