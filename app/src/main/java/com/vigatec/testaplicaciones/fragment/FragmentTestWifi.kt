@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.WifiAdapterList
 
@@ -74,6 +75,10 @@ class FragmentTestWifi : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
     {
         super.onViewCreated(view, savedInstanceState)
         checkPermission()
+        binding.btnIPUpdate.setOnClickListener{
+            val action = FragmentTestWifiDirections.actionFragmentTestWifiToFragmentTestPrint()
+            findNavController().navigate(action)
+        }
 
     }
 
@@ -125,7 +130,7 @@ class FragmentTestWifi : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
         {
             Toast.makeText(requireContext(), "Redes no encontradas", Toast.LENGTH_SHORT).show()
         }
-        checkPermission()
+
     }
 
     private fun clearList() {

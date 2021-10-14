@@ -149,7 +149,8 @@ class FragmentTestEmv : Fragment()
                 override fun onCardInsert()
                 {
                     Log.d(TAG,"=> onCardInsert")
-                    startEMV(emvOption.flagPSE(0x00.toByte()))
+
+
                 }
 
                 override fun onCardPass(p0: Int) {

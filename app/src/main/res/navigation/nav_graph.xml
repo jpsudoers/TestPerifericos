@@ -95,7 +95,16 @@
         android:id="@+id/fragmentTestWifi"
         android:name="com.vigatec.testaplicaciones.fragment.FragmentTestWifi"
         android:label="fragment_test_wifi"
-        tools:layout="@layout/fragment_test_wifi" />
+        tools:layout="@layout/fragment_test_wifi" >
+        <action
+            android:id="@+id/action_fragmentTestWifi_to_fragmentTestPrint"
+            app:destination="@id/fragmentTestPrint" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTestPrint"
+        android:name="com.vigatec.testaplicaciones.fragment.FragmentTestPrint"
+        android:label="fragment_test_print"
+        tools:layout="@layout/fragment_test_print" />
 
 
 </navigation>

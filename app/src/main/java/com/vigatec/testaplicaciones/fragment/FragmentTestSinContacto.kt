@@ -137,8 +137,7 @@ open class FragmentTestSinContacto : Fragment() {
                     Log.d(TAG,"=> onCardPass")
                     startEMV(emvOption.flagPSE(0x01.toByte()))
 
-                    TODO("Not yet implemented")
-                }
+                                    }
 
                 override fun onTimeout()
                 {
