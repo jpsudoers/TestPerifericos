@@ -30,7 +30,7 @@ class FragmentTestDisplayCyan : Fragment()
                 {
                         super.onViewCreated(view, savedInstanceState)
 
-                        binding.btnTestDisplay1Cyan.setOnClickListener{
+                            binding.btnTestDisplay1Cyan.setOnClickListener{
                         val action = FragmentTestDisplayCyanDirections.actionFragmentTestDisplayCyanToFragmentTestDisplayMagenta()
                             findNavController().navigate(action)
                             Toast.makeText(requireContext(), "Prueba CYAN Ok", Toast.LENGTH_SHORT).show()

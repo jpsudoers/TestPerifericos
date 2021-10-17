@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_banda.xml" value="0.3182291666666667" />
+        <entry key="..\:/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_emv.xml" value="0.3182291666666667" />
+        <entry key="..\:/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_gprs.xml" value="0.3182291666666667" />
         <entry key="..\:/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_wifi.xml" value="0.31476449275362317" />
         <entry key="..\:/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/row_wifi.xml" value="0.3255208333333333" />
         <entry key="..\:/Users/jpsil/AndroidStudioProjects/TestPerifericos/app/src/main/res/layout/fragment_test_banda.xml" value="0.321875" />
