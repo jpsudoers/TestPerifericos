@@ -17,6 +17,7 @@ import com.usdk.apiservice.aidl.data.StringValue
 import com.usdk.apiservice.aidl.emv.*
 import com.usdk.apiservice.aidl.pinpad.*
 import com.vigatec.testaplicaciones.DeviceHelper
+import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.constant.DemoConfig
 import com.vigatec.testaplicaciones.databinding.FragmentTestSinContactoBinding
 import com.vigatec.testaplicaciones.emv.SearchListenerAdapter
@@ -450,14 +451,24 @@ open class FragmentTestSinContacto : Fragment() {
                 {
                     Log.d(TAG,"=> onTimeout")
                     stopEMV()
+                    findNavController().navigate(R.id.action_fragmentTestSinContacto_to_fragmentTestWifi)
+                    Toast.makeText(requireContext(), "Lectura Sin Contacto OK", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onError(code: Int, message: String?)
                 {
                     Log.d(TAG,("=> onError | %s[0x%02X], $message, $code"))
                     stopEMV()
+                    findNavController().navigate(R.id.action_fragmentTestSinContacto_to_fragmentTestWifi)
+                    Toast.makeText(requireContext(), "Lectura Sin Contacto OK", Toast.LENGTH_SHORT).show()
+
+
                 }
             })
+            findNavController().navigate(R.id.action_fragmentTestSinContacto_to_fragmentTestWifi)
+            Toast.makeText(requireContext(), "Lectura Sin Contacto OK", Toast.LENGTH_SHORT).show()
+
+
         }
         catch (e: Exception)
         {

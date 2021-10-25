@@ -11,7 +11,7 @@ import com.usdk.apiservice.aidl.printer.*
 import com.vigatec.testaplicaciones.DeviceHelper
 import com.vigatec.testaplicaciones.databinding.FragmentTestPrintBinding
 import kotlinx.android.synthetic.main.fragment_test_print.*
-import java.lang.Exception
+
 
 
 class FragmentTestPrint : Fragment()
@@ -62,7 +62,7 @@ class FragmentTestPrint : Fragment()
 
             Log.d(TAG, "Impresora lista para imprimir")
             Toast.makeText(requireContext(), "Impresora lista", Toast.LENGTH_SHORT).show()
-            printer!!.addText(AlignMode.CENTER, "Pruebas de pantalla")
+            printer!!.addText(AlignMode.CENTER, "PRUEBAS DE PANTALLA")
             printer!!.addText(AlignMode.LEFT, "Prueba CYAN OK")
             printer!!.addText(AlignMode.LEFT, "Prueba MAGENTA OK")
             printer!!.addText(AlignMode.LEFT, "Prueba YELLOW OK")
@@ -78,6 +78,14 @@ class FragmentTestPrint : Fragment()
             printer!!.feedLine(1)
             printer!!.addText(AlignMode.CENTER, "Prueba Impresión")
             printer!!.addText(AlignMode.LEFT, "Prueba IMPRESION OK")
+            printer!!.feedLine(1)
+            printer!!.addText(AlignMode.CENTER, "Visítanos")
+            printer!!.feedLine(1)
+            printer!!.addQrCode(AlignMode.CENTER, 240, ECLevel.ECLEVEL_H, "www.vigatec.cl")
+            printer!!.addBarCode(AlignMode.CENTER, 2, 48, "0303456")
+
+
+
 
             printer!!.startPrint (object : OnPrintListener.Stub() {
                 override fun onFinish() {
@@ -89,7 +97,14 @@ class FragmentTestPrint : Fragment()
                         else
                          */
                   //  findNavController().popBackStack(R.id.mainMenuFragment, false)
+                   //  findNavController().navigate(R.id.action_fragmentTestPrint_to_fragmentTestResult)
+
+
                 }
+
+
+
+
                 override fun onError(i: Int) {
                     /*
                         if(externalApp){
@@ -99,10 +114,17 @@ class FragmentTestPrint : Fragment()
                         else
                          */
                   //  findNavController().popBackStack(R.id.mainMenuFragment, false)
+                 //   findNavController().navigate(R.id.action_fragmentTestPrint_to_fragmentTestResult)
+
                 }
             })
         }
     }
+
+
+
+
+
 
 
 

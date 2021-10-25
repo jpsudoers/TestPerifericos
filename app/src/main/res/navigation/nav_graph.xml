@@ -108,7 +108,16 @@
         android:id="@+id/fragmentTestPrint"
         android:name="com.vigatec.testaplicaciones.fragment.FragmentTestPrint"
         android:label="fragment_test_print"
-        tools:layout="@layout/fragment_test_print" />
+        tools:layout="@layout/fragment_test_print" >
+        <action
+            android:id="@+id/action_fragmentTestPrint_to_fragmentTestResult"
+            app:destination="@id/fragmentTestResult" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTestResult"
+        android:name="com.vigatec.testaplicaciones.fragment.FragmentTestResult"
+        android:label="fragment_test_result"
+        tools:layout="@layout/fragment_test_result" />
 
 
 </navigation>

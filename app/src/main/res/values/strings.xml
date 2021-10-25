@@ -5,7 +5,7 @@
     <string name="seleccione_color">Selecciona el color que corresponde</string>
     <string name="btn_begin">Comenzar</string>
     <string name="init_message">Bienvenido, presione comenzar para iniciar pruebas</string>
-    <string name="finish_message">Proceso de pruebas terminado, puedes revisar el voucher con los resultados.</string>
+    <string name="finish_message">Proceso de pruebas terminado, puedes revisar el voucher con los resultados. Si no se imprime, revisar papel o en su defecto la impresora tiene problemas</string>
     <string name="content_descripction">Vigatec Logo</string>
     <string name="swipe_magnetic">Deslice Tarjeta</string>
     <string name="read_chip">Inserte Tarjeta</string>

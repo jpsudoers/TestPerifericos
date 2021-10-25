@@ -27,6 +27,7 @@ import com.vigatec.testaplicaciones.util.TLV
 import java.lang.Exception
 import java.lang.IllegalStateException
 import com.usdk.apiservice.aidl.emv.ActionFlag
+import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.constant.DemoConfig.TAG
 import com.vigatec.testaplicaciones.databinding.FragmentTestEmvBinding
 import com.vigatec.testaplicaciones.util.EMVInfoUtil
@@ -89,10 +90,10 @@ class FragmentTestEmv : Fragment()
 
 
         binding.btnEmv.setOnClickListener{
-            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
-
             val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
             findNavController().navigate(action)
+            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
+
 
         }
 
@@ -204,6 +205,8 @@ class FragmentTestEmv : Fragment()
 
             Log.d(TAG, "=> Start EMV + $ret")
             openPinpad()
+            findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
+            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
 
         }
         catch (e: Exception)
@@ -475,14 +478,21 @@ class FragmentTestEmv : Fragment()
                 {
                     Log.d(TAG,"=> onTimeout")
                     stopEMV()
+                    findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
+                    Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onError(code: Int, message: String?)
                 {
                     Log.d(TAG,("=> onError | %s[0x%02X], $message, $code"))
                     stopEMV()
+                    findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
+                    Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
                 }
             })
+            findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
+            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
+
         }
         catch (e: Exception)
         {

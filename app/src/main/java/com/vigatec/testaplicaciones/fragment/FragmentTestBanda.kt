@@ -73,6 +73,13 @@ class FragmentTestBanda : Fragment() {
         Log.d(TAG,"Sonido Beep MagStripe")
         beepWhenNormal(view)
 
+         binding.btnMagStripe.setOnClickListener {
+             val action = FragmentTestBandaDirections.actionFragmentTestBandaToFragmentTestEmv()
+             findNavController().navigate(action)
+             Toast.makeText(requireContext(), "Lectura Banda OK", Toast.LENGTH_SHORT).show()
+
+         }
+
     }
 
     private fun register()
@@ -149,6 +156,8 @@ class FragmentTestBanda : Fragment() {
                 override fun onError(p0: Int)
                 {
                     Log.d(TAG,"OnError")
+                    findNavController().navigate(R.id.action_fragmentTestBanda_to_fragmentTestEmv)
+                    Toast.makeText(requireContext(), "Lectura banda OK", Toast.LENGTH_SHORT).show()
 
                 }
 
@@ -156,6 +165,8 @@ class FragmentTestBanda : Fragment() {
                 override fun onTimeout()
                 {
                     //outputRedText("=> onTimeout")
+                    findNavController().navigate(R.id.action_fragmentTestBanda_to_fragmentTestEmv)
+                    Toast.makeText(requireContext(), "TimeOut", Toast.LENGTH_SHORT).show()
                 }
             })
         }

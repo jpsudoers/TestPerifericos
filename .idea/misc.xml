@@ -41,6 +41,7 @@
         <entry key="app/src/main/res/layout/fragment_inicio.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_test_banda.xml" value="0.12552083333333333" />
         <entry key="app/src/main/res/layout/fragment_test_display_cyan.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/fragment_test_display_yellow.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_test_print.xml" value="0.12552083333333333" />
         <entry key="app/src/main/res/layout/fragment_test_result.xml" value="0.125" />
         <entry key="app/src/main/res/layout/fragment_test_wifi.xml" value="0.12552083333333333" />
