@@ -89,6 +89,8 @@ class FragmentTestEmv : Fragment()
 
 
         binding.btnEmv.setOnClickListener{
+            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
+
             val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
             findNavController().navigate(action)
 

@@ -38,6 +38,10 @@
         <action
             android:id="@+id/action_fragmentTestDisplayMagenta_to_fragmentTestDisplayYellow"
             app:destination="@id/fragmentTestDisplayYellow" />
+        <argument
+            android:name="ColorIsValidCyan"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
 
     <fragment

@@ -75,6 +75,8 @@ open class FragmentTestSinContacto : Fragment() {
         startTrade(view)
         startEMV(emvOption)
         biding.btnCless.setOnClickListener(){
+            Toast.makeText(requireContext(), "Lectura Sin Contacto OK", Toast.LENGTH_SHORT).show()
+
             val action = FragmentTestSinContactoDirections.actionFragmentTestSinContactoToFragmentTestWifi()
             findNavController().navigate(action)
 

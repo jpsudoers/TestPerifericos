@@ -15,6 +15,7 @@ class FragmentTestDisplayCyan : Fragment()
     private val TAG = "FragmentTestDisplayCyan"
     private var _binding: FragmentTestDisplayCyanBinding? = null
     private val binding get() = _binding!!
+    private  var colorSelectedIsValidCyan: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +32,7 @@ class FragmentTestDisplayCyan : Fragment()
                         super.onViewCreated(view, savedInstanceState)
 
                             binding.btnTestDisplay1Cyan.setOnClickListener{
-                        val action = FragmentTestDisplayCyanDirections.actionFragmentTestDisplayCyanToFragmentTestDisplayMagenta()
+                                val action = FragmentTestDisplayCyanDirections.actionFragmentTestDisplayCyanToFragmentTestDisplayMagenta()
                             findNavController().navigate(action)
                             Toast.makeText(requireContext(), "Prueba CYAN Ok", Toast.LENGTH_SHORT).show()
                                                                       }

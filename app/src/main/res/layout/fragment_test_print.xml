@@ -49,7 +49,14 @@
             android:id="@+id/btnEnablePrint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Continuar" />
+            android:text="Imprimir Prueba" />
+
+        <Button
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Terminar" />
     </LinearLayout>
 
 </LinearLayout>

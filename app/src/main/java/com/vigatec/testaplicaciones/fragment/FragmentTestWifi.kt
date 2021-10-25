@@ -78,6 +78,15 @@ class FragmentTestWifi : Fragment(), ActivityCompat.OnRequestPermissionsResultCa
         binding.btnIPUpdate.setOnClickListener{
             val action = FragmentTestWifiDirections.actionFragmentTestWifiToFragmentTestPrint()
             findNavController().navigate(action)
+            Toast.makeText(requireContext(), "Wifi funcionando correctamente", Toast.LENGTH_SHORT).show()
+
+        }
+
+        binding.btnIPNoShow.setOnClickListener{
+            val action = FragmentTestWifiDirections.actionFragmentTestWifiToFragmentTestPrint()
+            findNavController().navigate(action)
+            Toast.makeText(requireContext(), "Wifi funcionando correctamente", Toast.LENGTH_SHORT).show()
+
         }
 
     }

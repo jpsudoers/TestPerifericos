@@ -74,7 +74,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnIPAuthorization"
+            android:id="@+id/btnIPNoShow"
             app:cardCornerRadius="7.50dp"
 
             style="@style/card_item_menu">

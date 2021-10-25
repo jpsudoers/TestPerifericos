@@ -138,7 +138,10 @@ class FragmentTestBanda : Fragment() {
                     }
                     else
                     {
+
                         findNavController().navigate(R.id.action_fragmentTestBanda_to_fragmentTestEmv)
+                        Toast.makeText(requireContext(), "Lectura banda OK", Toast.LENGTH_SHORT).show()
+
                     }
 
                 }

@@ -1,6 +1,7 @@
 package com.vigatec.testaplicaciones.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +35,9 @@ class FragmentTestDisplayMagenta : Fragment()
                         val action = FragmentTestDisplayMagentaDirections.actionFragmentTestDisplayMagentaToFragmentTestDisplayYellow()
                     findNavController().navigate(action)
                     Toast.makeText(requireContext(), "Prueba MAGENTA OK", Toast.LENGTH_SHORT).show()
-                                                                 }
+
+
+                }
 
             }
 
