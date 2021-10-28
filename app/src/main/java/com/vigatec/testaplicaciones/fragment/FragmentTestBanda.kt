@@ -25,6 +25,7 @@ import java.lang.IllegalStateException
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.usdk.apiservice.aidl.beeper.UBeeper
+import com.vigatec.testaplicaciones.constant.DemoConfig.TAG
 import com.vigatec.testaplicaciones.databinding.FragmentTestBandaBinding
 
 
@@ -72,15 +73,11 @@ class FragmentTestBanda : Fragment() {
         //getBeeper()?.startBeep(300)
         Log.d(TAG,"Sonido Beep MagStripe")
         beepWhenNormal(view)
-
-         binding.btnMagStripe.setOnClickListener {
-             val action = FragmentTestBandaDirections.actionFragmentTestBandaToFragmentTestEmv()
-             findNavController().navigate(action)
-             Toast.makeText(requireContext(), "Lectura Banda OK", Toast.LENGTH_SHORT).show()
+        Toast.makeText(requireContext(), "Apertura periferico Banda OK", Toast.LENGTH_SHORT).show()
 
          }
 
-    }
+
 
     private fun register()
     {
@@ -100,6 +97,7 @@ class FragmentTestBanda : Fragment() {
     {
         try
         {
+
             beeper!!.startBeep(500)
         }
         catch (e: Exception)

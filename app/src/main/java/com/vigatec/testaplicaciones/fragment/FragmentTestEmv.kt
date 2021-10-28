@@ -86,13 +86,13 @@ class FragmentTestEmv : Fragment()
         beepWhenNormal(view)
         startTrade(view)
         startEMV(emvOption)
+        Toast.makeText(requireContext(), "Apertura Periferico EMV OK", Toast.LENGTH_SHORT).show()
 
 
 
         binding.btnEmv.setOnClickListener{
-            val action = FragmentTestEmvDirections.actionFragmentTestEmvToFragmentTestSinContacto()
+            val action = FragmentTestBandaDirections.actionFragmentTestBandaToFragmentTestSinContacto()
             findNavController().navigate(action)
-            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
 
 
         }
@@ -146,18 +146,26 @@ class FragmentTestEmv : Fragment()
                 override fun onCardSwiped(p0: Bundle?) {
                     Log.d(TAG,"=> onCardSwiped")
 
-                    Toast.makeText(requireContext(), "Debe insertar la tarjeta", Toast.LENGTH_SHORT).show()
+                    TODO("Not yet implemented")
                 }
 
                 override fun onCardInsert()
                 {
                     Log.d(TAG,"=> onCardInsert")
+                    startEMV(emvOption.flagPSE(0x00.toByte()))
+                    beepWhenNormal(view)
+
+                    findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestWifi)
+                    Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
 
 
                 }
 
-                override fun onCardPass(p0: Int) {
-
+                override fun onCardPass(p0: Int)
+                {
+                    Log.d(TAG,"=> onCardPass")
+                    startEMV(emvOption.flagPSE(0x01.toByte()))
+                    findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestWifi)
 
 
                 }
@@ -205,8 +213,7 @@ class FragmentTestEmv : Fragment()
 
             Log.d(TAG, "=> Start EMV + $ret")
             openPinpad()
-            findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
-            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
+          //  findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestWifi)
 
         }
         catch (e: Exception)
@@ -491,7 +498,7 @@ class FragmentTestEmv : Fragment()
                 }
             })
             findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestSinContacto)
-            Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
+
 
         }
         catch (e: Exception)
@@ -528,11 +535,14 @@ class FragmentTestEmv : Fragment()
                 override fun onSelected(item: Int)
                 {
                     respondAID(candList[item].aid)
+                    Toast.makeText(requireContext(), "Lectura Chip OK", Toast.LENGTH_SHORT).show()
                 }
             })
-        } else {
+        } else
+        {
             respondAID(candList[0].aid)
         }
+
     }
 
     protected open fun selectApp(candList: List<CandidateAID>, listener: OnSelectListener)
@@ -653,6 +663,7 @@ class FragmentTestEmv : Fragment()
         }
         Log.d(TAG,"...onFinalSelect: setTLVList")
         Log.d(TAG,"...onFinalSelect: respondEvent")
+        findNavController().navigate(R.id.action_fragmentTestEmv_to_fragmentTestWifi)
     }
 
     @Throws(RemoteException::class)

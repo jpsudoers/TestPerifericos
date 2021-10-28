@@ -43,14 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="180dp"
         android:orientation="vertical"
-        android:background="#23BEBFB3">
-
-        <Button
-            android:id="@+id/btnMagStripe"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Continuar" />
-    </LinearLayout>
+        android:background="#23BEBFB3"/>
 
 </LinearLayout>
 

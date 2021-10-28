@@ -76,7 +76,7 @@ open class FragmentTestSinContacto : Fragment() {
         startTrade(view)
         startEMV(emvOption)
         biding.btnCless.setOnClickListener(){
-            Toast.makeText(requireContext(), "Lectura Sin Contacto OK", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Apertura periferico Contactless OK", Toast.LENGTH_SHORT).show()
 
             val action = FragmentTestSinContactoDirections.actionFragmentTestSinContactoToFragmentTestWifi()
             findNavController().navigate(action)
@@ -114,6 +114,19 @@ open class FragmentTestSinContacto : Fragment() {
         }
     }
 
+    fun beepWhenContactless(v: View?)
+    {
+        Log.d(TAG,"beepWhenNormal")
+        try
+        {
+            beeper!!.startBeep(1000)
+        }
+        catch (e: Exception)
+        {
+            println("Era...")
+        }
+    }
+
 
     open fun startTrade(v: View?)
     {
@@ -124,23 +137,27 @@ open class FragmentTestSinContacto : Fragment() {
         {
             emv!!.searchCard(cardOption.toBundle(), DemoConfig.TIMEOUT, object : SearchCardListener.Stub()
             {
-                override fun onCardSwiped(p0: Bundle?) {
+                override fun onCardSwiped(p0: Bundle?)
+                {
                     Log.d(TAG,"=> onCardSwiped")
 
                     TODO("Not yet implemented")
                 }
 
                 override fun onCardInsert()
-                {
-                    Log.d(TAG,"=> onCardInsert")
+               {
 
                 }
 
                 override fun onCardPass(p0: Int) {
                     Log.d(TAG,"=> onCardPass")
                     startEMV(emvOption.flagPSE(0x01.toByte()))
+                    beepWhenContactless(view)
+//                    Toast.makeText(requireContext(), "Lectura Contactless OK", Toast.LENGTH_SHORT).show()
 
-                                    }
+
+
+                }
 
                 override fun onTimeout()
                 {
@@ -230,7 +247,7 @@ open class FragmentTestSinContacto : Fragment() {
         }
         catch (e: Exception)
         {
-            Log.d(TAG,"No se pudo para EMV")
+            Log.d(TAG,"No se pudo parar EMV")
         }
     }
 

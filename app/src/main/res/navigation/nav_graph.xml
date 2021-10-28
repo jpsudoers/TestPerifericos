@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_fragmentTestEmv_to_fragmentTestSinContacto"
             app:destination="@id/fragmentTestSinContacto" />
+        <action
+            android:id="@+id/action_fragmentTestEmv_to_fragmentTestWifi"
+            app:destination="@id/fragmentTestWifi" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTestBanda"
@@ -80,10 +83,9 @@
         tools:layout="@layout/fragment_test_banda" >
         <action
             android:id="@+id/action_fragmentTestBanda_to_fragmentTestEmv"
-            app:destination="@id/fragmentTestEmv"
-            />
+            app:destination="@id/fragmentTestEmv" />
         <action
-            android:id="@+id/action_fragmentTestEmv_to_fragmentTestSinContacto"
+            android:id="@+id/action_fragmentTestBanda_to_fragmentTestSinContacto"
             app:destination="@id/fragmentTestSinContacto" />
     </fragment>
     <fragment

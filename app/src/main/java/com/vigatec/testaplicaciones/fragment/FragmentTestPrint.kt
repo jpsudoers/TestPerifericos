@@ -7,8 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.usdk.apiservice.aidl.printer.*
 import com.vigatec.testaplicaciones.DeviceHelper
+import com.vigatec.testaplicaciones.R
 import com.vigatec.testaplicaciones.databinding.FragmentTestPrintBinding
 import kotlinx.android.synthetic.main.fragment_test_print.*
 
@@ -97,7 +99,7 @@ class FragmentTestPrint : Fragment()
                         else
                          */
                   //  findNavController().popBackStack(R.id.mainMenuFragment, false)
-                   //  findNavController().navigate(R.id.action_fragmentTestPrint_to_fragmentTestResult)
+                     findNavController().navigate(R.id.action_fragmentTestPrint_to_fragmentTestResult)
 
 
                 }
